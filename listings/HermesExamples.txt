@@ -1,0 +1,63 @@
+Node: 10.1.4.0_24
+{
+	Description: "10.1.4.0_24";
+	Path: "remote/Subject/IP_addresses/Internal_IP_addresses/10.1.4.0_24";
+	Type: Subject;
+	Children: [10.1.4.2];
+}
+
+Node: FastEthernet0_0
+{
+	Description: "FastEthernet0_0";
+	Path: "remote/Subject/Interfaces/FastEthernet0_0";
+	Type: Subject;
+}
+
+Node: send
+{
+	Description: "send";
+	Path: "remote/Actions/send";
+	Type: Action;
+}
+
+Node: Tunnel1
+{
+	Description: "Tunnel1";
+	Path: "remote/Objects/Interfaces/Tunnel1";
+	Type: Object;
+}
+
+Node: s1first
+{
+	Description: "s1first";
+	Path: "remote/Actions/crypto/s1first";
+	Type: Action;
+}
+
+Node: Serial1_0
+{
+	Description: "Serial1_0";
+	Path: "remote/Objects/Interfaces/Serial1_0";
+	Type: Object;
+}
+
+Node: 172_17_2_4
+{
+	Description: "172.17.2.4";
+	Path: "remote/Objects/IP_addresses/External_IP_addresses/172.17.2.4";
+	Type: Object;
+}
+
+Node: 10_1_3_0_24
+{
+	Description: "10.1.3.0_24";
+	Path: "remote/Objects/IP_addresses/External_IP_addresses/10.1.3.0_24";
+	Type: Object;
+}
+
+Policy: p1002
+{
+	Description: "HPol Policy";
+	Status: Enabled;
+	Path: [HPolStart, 10.1.4.0_24, FastEthernet0_0, send, Tunnel1, s1first, Serial1_0, 172.17.2.4, 10.1.3.0_24, HPolEnd];
+}
